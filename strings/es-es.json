@@ -1,0 +1,31 @@
+{
+  "mailgun_failed_load_api_key": "[es-es] Failed to load MailGun API key.",
+  "mailgun_failed_load_domain": "[es-es] Failed to load MailGun domain.",
+  "mailgun_error_send_email": "[es-es] Error in sending confirmation email, user registration failed.",
+
+  "confirmation_not_found": "[es-es] Confirmation reference not found.",
+  "confirmation_link_expired": "[es-es] The link has expired.",
+  "confirmation_already_confirmed": "[es-es] Registration has already been confirmed.",
+  "confirmation_resend_fail": "[es-es] Internal server error. Failed to resend confirmation email.",
+  "confirmation_resend_successful": "[es-es] E-mail confirmation successfully re-sent.",
+
+  "item_name_exists": "[es-es] An item with name '{}' already exists.",
+  "item_error_inserting": "[es-es] An error occurred while inserting the item.",
+  "item_not_found": "[es-es] Item not found.",
+  "item_deleted": "[es-es] Item deleted.",
+
+  "store_name_exists": "[es-es] A store with name '{}' already exists.",
+  "store_error_inserting": "[es-es] An error occurred while inserting the store.",
+  "store_not_found": "[es-es] Store not found.",
+  "store_deleted": "[es-es] Store deleted.",
+
+  "user_username_exists": "[es-es] A user with that username already exists.",
+  "user_email_exists": "[es-es] A user with that email already exists.",
+  "user_not_found": "[es-es] User not found.",
+  "user_deleted": "[es-es] User deleted.",
+  "user_invalid_credentials": "[es-es] Invalid credentials!",
+  "user_logged_out": "[es-es] User <id={}> successfully logged out.",
+  "user_not_confirmed": "[es-es] You have not confirmed registration, please check your email <{}>.",
+  "user_error_creating": "[es-es] Internal server error. Failed to create user.",
+  "user_registered": "[es-es] Account created successfully, an email with an activation link has been sent to your email address, please check."
+}

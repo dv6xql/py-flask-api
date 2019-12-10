@@ -11,12 +11,12 @@ In this project you can find a lot of powerful features, which was covered in th
 * Marshmallow for data serialization and deserialization
 * Send e-mails and user confirmations
 * Upload images
+* Postgres Integration
 
 ## To Do:
 * Database migrations
 * Handle payments using Stripe
 * Third party login using OAuth (GitHub is used as the example)
-* MySQL database connection
 * Flask Babel translations
 * Pagination
 
@@ -63,3 +63,10 @@ Run `docker-compose up --build` to build the project or `python app.py`.
 # Black
 Black is the uncompromising Python code formatter. You can run every command inside container using `docker exec -it {container_name} {command}`
 To run Black use `docker exec -it {container_name} black .`
+
+# Database Migrations
+
+1. Run `docker-compose exec python flask db init` to initialize migrations (if not exists).
+2. Run `docker-compose exec python flask db migrate` to create new migrations.
+3. Run `docker-compose exec python flask db upgrade` to upgrade a database.
+4. Run `docker-compose exec python flask db downgrade` to downgrade a database.

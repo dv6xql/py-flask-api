@@ -4,6 +4,7 @@ from flask_jwt_extended import JWTManager
 from marshmallow import ValidationError
 from flask_uploads import configure_uploads, patch_request_class
 from dotenv import load_dotenv
+from flask_migrate import Migrate
 
 from db import db
 from ma import ma
@@ -22,6 +23,7 @@ app.config.from_envvar("APPLICATION_SETTINGS")
 patch_request_class(app, 10 * 1024 * 1024)  # 10MB max size upload
 configure_uploads(app, IMAGE_SET)
 api = Api(app)
+migrate = Migrate(app, db)
 
 
 @app.before_first_request

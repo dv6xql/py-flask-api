@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: f2997692aded
+Revision ID: 4a2cbb7ea82f
 Revises: 
-Create Date: 2019-12-10 14:37:12.579484
+Create Date: 2019-12-11 08:08:36.639735
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'f2997692aded'
+revision = '4a2cbb7ea82f'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,34 +21,34 @@ def upgrade():
     op.create_table('stores',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=80), nullable=False),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('name')
+    sa.PrimaryKeyConstraint('id', name=op.f('pk_stores')),
+    sa.UniqueConstraint('name', name=op.f('uq_stores_name'))
     )
     op.create_table('users',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=80), nullable=False),
-    sa.Column('password', sa.String(length=80), nullable=False),
+    sa.Column('password', sa.String(length=255), nullable=False),
     sa.Column('email', sa.String(length=80), nullable=False),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('email'),
-    sa.UniqueConstraint('username')
+    sa.PrimaryKeyConstraint('id', name=op.f('pk_users')),
+    sa.UniqueConstraint('email', name=op.f('uq_users_email')),
+    sa.UniqueConstraint('username', name=op.f('uq_users_username'))
     )
     op.create_table('confirmations',
     sa.Column('id', sa.String(length=50), nullable=False),
     sa.Column('expire_at', sa.Integer(), nullable=False),
     sa.Column('confirmed', sa.Boolean(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
-    sa.PrimaryKeyConstraint('id')
+    sa.ForeignKeyConstraint(['user_id'], ['users.id'], name=op.f('fk_confirmations_user_id_users')),
+    sa.PrimaryKeyConstraint('id', name=op.f('pk_confirmations'))
     )
     op.create_table('items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(length=80), nullable=False),
     sa.Column('price', sa.Float(precision=2), nullable=False),
     sa.Column('store_id', sa.Integer(), nullable=False),
-    sa.ForeignKeyConstraint(['store_id'], ['stores.id'], ),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('name')
+    sa.ForeignKeyConstraint(['store_id'], ['stores.id'], name=op.f('fk_items_store_id_stores')),
+    sa.PrimaryKeyConstraint('id', name=op.f('pk_items')),
+    sa.UniqueConstraint('name', name=op.f('uq_items_name'))
     )
     # ### end Alembic commands ###
 

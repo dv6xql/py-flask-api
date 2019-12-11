@@ -6,7 +6,7 @@ WORKDIR /app
 
 COPY . /app
 
-RUN apk add --no-cache postgresql-libs && apk add --no-cache --virtual .build-deps postgresql-dev
+RUN apk add --no-cache postgresql-libs && apk add --no-cache --virtual .build-deps postgresql-dev libffi-dev
 
 RUN pip3 --no-cache-dir install -r requirements.txt
 

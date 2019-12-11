@@ -4,9 +4,11 @@ from flask_jwt_extended import JWTManager
 from marshmallow import ValidationError
 from flask_uploads import configure_uploads, patch_request_class
 from dotenv import load_dotenv
+from flask_migrate import Migrate
 
 from db import db
 from ma import ma
+from oa import oauth
 from blacklist import BLACKLIST
 from resources.user import UserRegister, UserLogin, User, TokenRefresh, UserLogout
 from resources.item import Item, ItemList
@@ -22,6 +24,7 @@ app.config.from_envvar("APPLICATION_SETTINGS")
 patch_request_class(app, 10 * 1024 * 1024)  # 10MB max size upload
 configure_uploads(app, IMAGE_SET)
 api = Api(app)
+migrate = Migrate(app, db)
 
 
 @app.before_first_request
@@ -62,4 +65,5 @@ api.add_resource(Avatar, "/avatar/<int:user_id>")
 if __name__ == "__main__":
     db.init_app(app)
     ma.init_app(app)
+    oauth.init_app(app)
     app.run(host="0.0.0.0", port=5000)

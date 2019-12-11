@@ -10,3 +10,6 @@ marshmallow-sqlalchemy
 requests
 python-dotenv
 flask-uploads
+psycopg2
+flask-migrate
+Authlib

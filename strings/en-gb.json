@@ -29,6 +29,9 @@
   "user_error_creating": "Internal server error. Failed to create user.",
   "user_registered": "Account created successfully, an email with an activation link has been sent to your email address, please check.",
 
+  "order_item_by_id_not_found": "An item <id={}> in this order cannot be found.",
+  "order_error": "Internal server error. Failed to create a order.",
+
   "image_uploaded": "Image '{}' uploaded.",
   "image_illegal_extension": "Extension '{}' is not allowed.",
   "image_illegal_file_name": "Illegal filename '{}' requested.",

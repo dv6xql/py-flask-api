@@ -12,10 +12,10 @@ In this project you can find a lot of powerful features, which was covered in th
 * Send e-mails and user confirmations
 * Upload images
 * Postgres Integration
-
-## To Do:
 * Database migrations
 * Handle payments using Stripe
+
+## To Do:
 * Third party login using OAuth (GitHub is used as the example)
 * Flask Babel translations
 * Pagination
@@ -54,6 +54,8 @@ Below you can find all available endpoints.
 | GET    | `/store/<string:name>` | No | Get store data |
 | POST   | `/store/<string:name>` | No | Store new store |
 | DELETE | `/store/<string:name>` | No | Delete store |
+| GET    | `/orders` | No | Get orders data |
+| POST   | `/orders` | No | Store new order |
 
 
 # Dockerize

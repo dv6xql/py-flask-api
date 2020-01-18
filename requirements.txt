@@ -13,3 +13,4 @@ flask-uploads
 psycopg2
 flask-migrate
 Authlib
+stripe

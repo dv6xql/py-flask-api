@@ -18,6 +18,7 @@ requests = "*"
 python-dotenv = "*"
 flask-uploads = "*"
 authlib = "*"
+stripe = "*"
 
 [requires]
 python_version = "3.8"
